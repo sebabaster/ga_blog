@@ -1,0 +1,40 @@
+title: Personal website - Sebastian Basterrech
+email: sebbas@dtu.dk
+description: >- # this means to ignore newlines until "baseurl:"
+  Personal website of S. Basterrech.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+cover: "/assets/Green.jpg"
+logo: "/assets/logoSB.png"
+Orcid_id : 0000-0002-9172-0155
+Scopus_id : 36719811900
+WoS_id : C-9072-2014
+Github : https://github.com/sebabaster
+Web : https://sebabaster.github.io/
+
+# Navigation settings
+navigation:
+  - title: "Short Bio"
+    url: "/shortbio/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "Teaching and supervision"
+    url: "/teachingsupervision/"
+  - title: "Services"
+    url: "/services/"
+  - title: "Contacts"
+    url: "/contacts/"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      title: "My_title"

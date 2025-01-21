@@ -1,0 +1,63 @@
+---
+layout: default
+pagination:
+  enabled: true
+---
+<div class="home">
+
+<div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
+  <div class="scrim {% if site.cover %}has-cover{% endif %}">
+    <header class="site-header">
+      <h1 class="title">{{ site.title }}</h1>
+      {% if site.subtitle %}<p class="subtitle">{{ site.subtitle }}</p>{% endif %}
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+<ul class="post-list">
+  {% for post in paginator.posts %}
+  <li>
+    <h2>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+      <div class="post-categories">
+      {% if post.categories.size > 0 %}in {% for cat in post.categories %}
+        {% if site.jekyll-archives %}
+        <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+        {% else %}
+        <a href="{{ site.baseurl }}/posts/#{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endif %}
+      {% endfor %}{% endif %}
+      </div>
+    </section>
+  </li>
+  {% if forloop.last == false %}
+  <hr>
+  {% endif %}
+  {% endfor %}
+</ul>
+<p>
+<strong>
+Welcome to my personal website!<br>
+</strong>
+Here, you can explore my professional journey, including my CV, a list of my publications, and details about the academic services I have the chance to offer.
+You'll also find information about the courses I've taught and the students I've supervised, in multiple levels and from multiple countries.
+While I do not have online available  the PDFs of my course materials or published articles here, please feel free to contact me if you need any specific files or further information.<br><br>
+<strong>
+  RESEARCH INTERESTS<br>
+</strong>
+Spatio-temporal modeling, Predictive Modeling, Neural Networks, Continual Machine Learning, Fairness in
+Machine Learning, Non-stationary data modeling, Optimization, Anomaly Detection, Distributed Systems, Networks.
+<br>
+<br>
+During the last years I have developed deliveries in several programming languages, including: Python, Java, C, C++, Matlab and R.
+
+</p>
+</div>
+</div>
